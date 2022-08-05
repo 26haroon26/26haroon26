@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+
+<body>
+    <div style="display:flex; justify-content: space-between;">
+
+        <form action="#">
+            <input type="radio" id="pencil" name="pencil" value="pencil">
+            <label for="pencil"><i class="fa-solid fa-pencil"></i></label>
+            <label for="color">Color</label>
+            <input type="color" name="color" id="color" >
+            <label for="size">Size</label>
+            <input type="range" name="size" id="size" value="6">
+        </form>
+        <div id="forimage">
+            <button onclick="forReset()">Reset</button>
+            <button onclick="forSave()">Save</button>
+        </div>
+    </div>
+    
+    <canvas id="myCanvas" width="300px" height="300px">
+    </canvas>
+<a target="_blank" id="savedImage">savedImage</a>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
