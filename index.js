@@ -8,7 +8,10 @@ let ctx = canva.getContext("2d");
 var strDataURI = canva.toDataURL();
 
 let isMouseDown = false;
-let startx, starty, endx, endy;
+let pencilStartx, pencilStarty, pencilEndx, pencilEndy, 
+    circleStartx, circleStarty, circleEndx, circleEndy,
+    squarelStartx, squareStarty, squareEndx, squareEndy;
+
 let pencilMouseDown=(event) => {
     isMouseDown = true;
 }
@@ -28,46 +31,46 @@ let pencilMouseMove = (event) => {
     }
 }
 let circleMouseDown = (event) => {
-    startx = event.offsetX;
-    starty = event.offsetY;
+    circleStartx = event.offsetX;
+    circleStarty = event.offsetY;
     isMouseDown = true;
 }
 let circleMouseUp= (event) => {
-    endx = event.offsetX;
-    endy = event.offsetY;
+     circleEndx = event.offsetX;
+     circleEndy = event.offsetY;
     isMouseDown = false;
-    let radius = event.offsetY - starty;
+    let radius = event.offsetY - circleStarty;
     console.log(radius);
     if (radius < 0) {
-        radius = starty - event.offsetY;
+        radius = circleStarty - event.offsetY;
         ctx.beginPath();
         ctx.strokeStyle = color.value;
         ctx.lineWidth = size.value;
-        ctx.arc(startx, starty, radius, 0, 2 * Math.PI);
+        ctx.arc(circleStartx, circleStarty, radius, 0, 2 * Math.PI);
         ctx.stroke();
     } else {
         ctx.beginPath();
         ctx.strokeStyle = color.value;
         ctx.lineWidth = size.value;
-        ctx.arc(startx, starty, radius, 0, 2 * Math.PI);
+        ctx.arc(circleStartx, circleStarty, radius, 0, 2 * Math.PI);
         ctx.stroke();
     }
 }
 let squareMouseDown = (event) => {
-     startx = event.offsetX;
-    starty = event.offsetY;
+    squarelStartx = event.offsetX;
+    squarelStartx = event.offsetY;
      isMouseDown = true;
      console.log(event);
  }
     
     
     let squareMouseUp =  (event) => {
-    endx = event.offsetX;
-    endy = event.offsetY;
+   squareEndx = event.offsetX;
+   squareEndy = event.offsetY;
     isMouseDown = false;
-    let  xaxis = endx - startx;
-    let  yaxis = endy - starty;
-        if (endx === startx && endy === starty) {
+    let  xaxis = squareEndx - startx;
+    let  yaxis = squareEndx - starty;
+        if (squareEndx === squarelStartx && squareEndy === squarelStarty) {
         ctx.strokeStyle = color.value;
         ctx.lineWidth = size.value;
         ctx.strokeRect(0, 0, 0, 0);
@@ -75,15 +78,15 @@ let squareMouseDown = (event) => {
     } else {
         ctx.strokeStyle = color.value;
         ctx.lineWidth = size.value;
-        ctx.strokeRect(startx, starty, xaxis, yaxis);
+        ctx.strokeRect(squareEndx, squareEndy, xaxis, yaxis);
         ctx.stroke();
         // ctx.save();
     }
      console.log("startx ",startx);
-    startx = "";
-     starty = "";
-     endx = "";
-     endy = "";
+    squarelStartx = "";
+     squarelStarty = "";
+     squarelStartx = "";
+     squarelStarty = "";
 }
 
 
