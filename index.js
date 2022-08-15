@@ -10,7 +10,7 @@ var strDataURI = canva.toDataURL();
 let isMouseDown = false;
 let pencilStartx, pencilStarty, pencilEndx, pencilEndy, 
     circleStartx, circleStarty, circleEndx, circleEndy,
-    squarelStartx, squareStarty, squareEndx, squareEndy;
+    squarelStartx, squarelStarty, squareEndx, squareEndy;
 
 let pencilMouseDown=(event) => {
     isMouseDown = true;
@@ -58,7 +58,7 @@ let circleMouseUp= (event) => {
 }
 let squareMouseDown = (event) => {
     squarelStartx = event.offsetX;
-    squarelStartx = event.offsetY;
+    squarelStarty = event.offsetY;
      isMouseDown = true;
      console.log(event);
  }
