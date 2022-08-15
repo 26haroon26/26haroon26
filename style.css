@@ -1,3 +1,36 @@
+
+#flex {
+  display: flex;
+  justify-content: space-between;
+}
 canvas {
     border: 1px solid black;
+}
+#nav{
+    display:flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+#forimage{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}form{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+
+}#circle
+{
+    color: white;
+    border: 2px solid black;
+    border-radius: 100%;
+}#square{
+    color: white;
+    border: 2px solid black;
+}#circle:hover ,#square:hover{
+    border: 2px solid blue;
+    color: yellow;
 }
